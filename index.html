@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Random Dice</title>
+    <link rel="icon" type="image/jpg" href="6.jpg">
+</head>
+<body>
+<button onclick="myFunction()">Roll dice</button>
+<p id="test"></p>
+<image id="image" src="" width=500 height=500></image>
+<br><br><br><br><br><br>
+<details>
+    <p>Note: <br><br>If you change the maximum value above 6, there will be no image except for numbers below 7.</p>
+    <summary>Settings</summary>
+    <p>MAXIMUM VALUE</p>
+    <textarea id="max" cols=10 rows=1>6</textarea>
+	<p>SHOW TEXT- TRUE/FALSE</p>
+	<textarea id="SNIOI" cols=10 rows=1>False</textarea>
+</details>
+<script>
+function myFunction() {
+var vmax = document.getElementById("max").value;
+if (vmax > 6) {
+    document.getElementById("SNIOI").innerHTML = "True";
+}
+var showNumberInsteadOfImage = document.getElementById("SNIOI").value;
+var lmax = parseInt(vmax);
+console.log(vmax);
+var l = (Math.floor((Math.random() * lmax) + 1));
+if (l === 1) {
+    document.getElementById("image").src = "1.jpg";
+} else if (l === 2) {
+    document.getElementById("image").src = "2.jpg";
+} else if (l === 3) {
+    document.getElementById("image").src = "3.jpg";
+} else if (l === 4) {
+    document.getElementById("image").src = "4.jpg";
+} else if (l === 5) {
+    document.getElementById("image").src = "5.jpg";
+} else if (l === 6) {
+    document.getElementById("image").src = "6.jpg";
+} else {
+    document.getElementById("image").src = "unknown.jpg";
+}
+if (showNumberInsteadOfImage.toLowerCase() === "true") {
+    document.getElementById("test").innerHTML = l;
+} else if (showNumberInsteadOfImage.toLowerCase() === "false") {
+    document.getElementById("test").innerHTML = "";
+}
+}
+</script>
+<p>Programmed by Joshua Nicholas <br>Images by Joshua Nicholas</p>
+</body>
